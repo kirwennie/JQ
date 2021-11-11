@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+    <style>
+        div {
+            position: absolute;
+            background-color: red;
+            left: 800px;
+            top: 400px;
+            width: 100px;
+            height: 100px;
+        }
+        </style>
+</head>
+<body>
+    <div></div>
+    <script type="text/javascript">
+    $(function(){
+        $('body').keydown(function(e){
+            if(e.keyCode === 39){
+                $('div').animate({ "left": "+=100px" }, "fast" );
+                var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                $('div').css("background-color", '#' + randomColor);
+            }
+            else if(e.keyCode === 37){
+                $('div').animate({ "left": "-=100px" }, "fast" );
+                var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                $('div').css("background-color", '#' + randomColor);
+            }
+            else if(e.keyCode === 40){
+                $('div').animate({ "top": "+=50px" }, "fast" );
+                var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                $('div').css("background-color", '#' + randomColor);
+            }
+            else if(e.keyCode === 38){
+                $('div').animate({ "top": "-=50px" }, "fast" );
+                var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                $('div').css("background-color", '#' + randomColor);
+            }
+        });
+    })
+    </script>
+</body>
+</html>
